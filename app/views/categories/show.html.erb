@@ -1,7 +1,6 @@
-<h1><%= @category.name %></h1>
-<% @category.posts.each do |post| %>
-  <div>
-    <h2><%= link_to post.title, post %></h2>
-    <p><%= post.content.truncate(100) %></p>
-  </div>
-<% end %>
+<h1><%= @category.name %> Posts</h1>
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %></li>
+  <% end %>
+</ul>

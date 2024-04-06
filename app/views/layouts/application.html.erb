@@ -4,19 +4,23 @@
   <title>Gaming Blog Platform</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-  <%= link_to 'Home', root_path %> |
-  <%= link_to 'New Post', new_post_path if user_signed_in? %> |
+  <nav>
+  <%= link_to 'Home', root_path, class: 'button' %> |
   <% if user_signed_in? %>
-    Logged in as <%= current_user.email %> |
-    <%= link_to 'My Profile', user_profile_path %> |
-    <%= link_to 'Logout', destroy_user_session_path %>
+  <p class='user'>
+    Logged in as <%= current_user.email %> </p> |
+    <%= link_to 'My Profile', user_profile_path, class: 'button' %> |
+    <%= link_to 'Logout', destroy_user_session_path, class: 'button' %>
   <% else %>
-    <%= link_to 'Sign Up', new_user_registration_path %> |
-    <%= link_to 'Login', new_user_session_path %>
-  <% end %>
-
-  <%= yield %>
+    <%= link_to 'Sign Up', new_user_registration_path,class: 'button' %> |
+    <%= link_to 'Login', new_user_session_path,class: 'button' %>
+  <% end %> |
+ <%= link_to 'Categories', categories_path, class: 'button' %>
+ </nav>
+ <div class='content'> <%= yield %> </div>
+ 
 </body>
 </html>

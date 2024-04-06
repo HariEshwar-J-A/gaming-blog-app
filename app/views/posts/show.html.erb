@@ -2,9 +2,11 @@
 <p><%= @post.content %></p>
 <h3>Comments:</h3>
 <%= render @post.comments %>
-
 <% if user_signed_in? %>
   <%= render 'comments/form', post: @post %>
 <% else %>
-  <%= link_to 'Sign in to comment', new_user_session_path %>
+<div class='user'>
+  <%= link_to 'Sign in to comment',  new_user_session_path %>
+</div>
 <% end %>
+

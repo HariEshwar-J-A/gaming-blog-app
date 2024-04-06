@@ -1,8 +1,8 @@
 <h1>All Posts</h1>
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path, class: 'button' %>
 <% @posts.each do |post| %>
   <div>
-    <h2><%= link_to post.title, post %></h2>
+    <h2 class='post'><%= link_to post.title, post %></h2>
     <p><%= post.content.truncate(100) %></p>
     <p>Category: <%= post.category_names%></p>
   </div>

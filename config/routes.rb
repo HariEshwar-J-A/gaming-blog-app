@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     get 'delete', on: :member
   end
 
-  resources :categories, only: [:show]
+  resources :categories, only: [:index, :show]
   resource :user_profile, only: [:show, :edit, :update]
 end
