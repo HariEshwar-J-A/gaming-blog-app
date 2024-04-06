@@ -1,0 +1,12 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <%= form.label :content %>
+  <%= form.text_area :content %>
+
+  <%= form.label :category_names, "Categories (comma-separated)" %>
+  <%= form.text_field :category_names %>
+
+  <%= form.submit %>
+<% end %>

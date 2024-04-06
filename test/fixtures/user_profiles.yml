@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nickname: MyString
+  bio: MyText
+  favorite_game: MyString
+  user: one
+
+two:
+  nickname: MyString
+  bio: MyText
+  favorite_game: MyString
+  user: two

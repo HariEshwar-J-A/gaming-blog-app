@@ -1,0 +1,7 @@
+<h1><%= @category.name %></h1>
+<% @category.posts.each do |post| %>
+  <div>
+    <h2><%= link_to post.title, post %></h2>
+    <p><%= post.content.truncate(100) %></p>
+  </div>
+<% end %>

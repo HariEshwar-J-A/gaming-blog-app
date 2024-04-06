@@ -1,0 +1,13 @@
+<h1>Edit Profile</h1>
+<%= form_for(:user_profile, url: user_profile_path, method: :patch) do |f| %>
+  <%= f.label :nickname %>
+  <%= f.text_field :nickname %>
+
+  <%= f.label :bio %>
+  <%= f.text_area :bio %>
+
+  <%= f.label :favorite_game %>
+  <%= f.text_field :favorite_game %>
+
+  <%= f.submit "Update" %>
+<% end %>

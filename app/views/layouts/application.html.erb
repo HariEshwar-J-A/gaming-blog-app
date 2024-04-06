@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GamingBlogApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Gaming Blog Platform</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+</head>
+<body>
+  <%= link_to 'Home', root_path %> |
+  <%= link_to 'New Post', new_post_path if user_signed_in? %> |
+  <% if user_signed_in? %>
+    Logged in as <%= current_user.email %> |
+    <%= link_to 'My Profile', user_profile_path %> |
+    <%= link_to 'Logout', destroy_user_session_path %>
+  <% else %>
+    <%= link_to 'Sign Up', new_user_registration_path %> |
+    <%= link_to 'Login', new_user_session_path %>
+  <% end %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+  <%= yield %>
+</body>
 </html>
