@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: gaming_blog_app_production
-  username: gaming_blog_app
-  password: <%= ENV["GAMING_BLOG_APP_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  database: <%= ENV['DATABASE'] %>
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
