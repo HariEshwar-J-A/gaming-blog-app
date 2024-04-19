@@ -3,6 +3,6 @@
  
   <% if user_signed_in? && comment.user == current_user %>
      <div class= 'user delete'>
-    <%= link_to 'Delete Comment', delete_comment_path(comment), data: { confirm: 'Are you sure?' } %>
+    <%= button_to 'Delete Comment', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' }, form: { class: 'delete-comment-form' } %>
   <% end %>
 </div>

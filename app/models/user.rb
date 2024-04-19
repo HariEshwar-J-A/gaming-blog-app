@@ -9,4 +9,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   # Consider adding validations for custom fields you might have added to the User model
+  def generate_jwt
+    JWT.encode({ id: id, exp: 24.hours.from_now.to_i }, Rails.application.credentials.jwt_secret_key)
+  end
 end
