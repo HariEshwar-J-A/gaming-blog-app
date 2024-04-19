@@ -1,0 +1,527 @@
+{
+	"info": {
+		"_postman_id": "70e4aea3-7a26-43fd-a66d-bd8c4b247a28",
+		"name": "Gaming Blog API",
+		"description": "This collection includes API calls to test the Gaming Blog application.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34375607",
+		"_collection_link": "https://dark-star-524974.postman.co/workspace/My-Workspace~837fdc49-4d07-4d3d-8a02-746860bf7e85/collection/34375607-70e4aea3-7a26-43fd-a66d-bd8c4b247a28?action=share&source=collection_link&creator=34375607"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"email\": \"user@example.com\",\n        \"password\": \"password123\",\n        \"password_confirmation\": \"password123\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/api/v1/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"email\": \"user@example.com\",\n        \"password\": \"password123\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/api/v1/login"
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"email\": \"user@example.com\",\n        \"password\": \"password123\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/v1/login"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"47154104e6cdcdf7c69820096c7a62ba\""
+						},
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "x-request-id",
+							"value": "8d4a2bae-80dd-4884-9e80-2a41203f73fc"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.197692"
+						},
+						{
+							"key": "server-timing",
+							"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=0.40, instantiation.active_record;dur=0.08, process_action.action_controller;dur=159.26"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "154"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MywiZXhwIjoxNzEzNjE1MTE5fQ.8PhVINi3PGUpaO0UBZ9GVCv9bR6y-sb6jT2JvnCMaDM\",\n    \"user\": {\n        \"id\": 3,\n        \"email\": \"user@example.com\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Fetch Posts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": "{{url}}/api/v1/posts"
+			},
+			"response": [
+				{
+					"name": "Fetch Posts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}/api/v1/posts"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"6be5ae5f93da4268fa72d8945334bf7e\""
+						},
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "x-request-id",
+							"value": "3eb0ef8b-1f13-491f-b913-7b06677b16ad"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.106111"
+						},
+						{
+							"key": "server-timing",
+							"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=2.81, instantiation.active_record;dur=13.23, process_action.action_controller;dur=29.65"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "392"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"The Future of Technology\",\n        \"content\": \"Exploring upcoming trends in technology...\",\n        \"user_id\": 1,\n        \"created_at\": \"2024-04-19T07:21:44.746Z\",\n        \"updated_at\": \"2024-04-19T07:21:44.746Z\"\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Introduction to Game Development\",\n        \"content\": \"Game development is both art and science...\",\n        \"user_id\": 2,\n        \"created_at\": \"2024-04-19T07:21:44.749Z\",\n        \"updated_at\": \"2024-04-19T07:21:44.749Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create Post",
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": {
+						"payload": "",
+						"isSecretBase64Encoded": false,
+						"algorithm": "HS256",
+						"addTokenTo": "header",
+						"headerPrefix": "Bearer",
+						"queryParamKey": "token",
+						"header": "{}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"post\": {\n        \"title\": \"My New Game Review\",\n        \"content\": \"This is a review of the latest game I played...\",\n        \"categories\": [\n            \"gaming\",\n            \"reviews\"\n        ],\n        \"user_id\": 3\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/api/v1/posts"
+			},
+			"response": [
+				{
+					"name": "Create Post",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"post\": {\n        \"title\": \"My New Game Review\",\n        \"content\": \"This is a review of the latest game I played...\",\n        \"categories\": [\n            \"gaming\",\n            \"reviews\"\n        ],\n        \"user_id\": 3\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/v1/posts"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "location",
+							"value": "http://127.0.0.1:3000/api/v1/posts/4"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"6755abc8815d30f5fb7410ddb78e50af\""
+						},
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "x-request-id",
+							"value": "28759730-57a8-4f2b-9bbe-d7411e54ba52"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.194936"
+						},
+						{
+							"key": "server-timing",
+							"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=7.13, instantiation.active_record;dur=1.68, unpermitted_parameters.action_controller;dur=0.00, transaction.active_record;dur=4.50, process_action.action_controller;dur=42.49"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "189"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"title\": \"My New Game Review\",\n    \"content\": \"This is a review of the latest game I played...\",\n    \"user_id\": 3,\n    \"created_at\": \"2024-04-19T13:27:11.951Z\",\n    \"updated_at\": \"2024-04-19T13:27:11.951Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Fetch Single Post",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": "{{url}}/api/v1/posts/1"
+			},
+			"response": [
+				{
+					"name": "Fetch Single Post",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}/api/v1/posts/1"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"82fbac410e463106c17cf0f145b28178\""
+						},
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "x-request-id",
+							"value": "e85aa30a-11a6-4193-8a3e-e0c1957bcd94"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.041680"
+						},
+						{
+							"key": "server-timing",
+							"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=0.31, instantiation.active_record;dur=0.05, process_action.action_controller;dur=4.07"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"The Future of Technology\",\n    \"content\": \"Exploring upcoming trends in technology...\",\n    \"user_id\": 1,\n    \"created_at\": \"2024-04-19T07:21:44.746Z\",\n    \"updated_at\": \"2024-04-19T07:21:44.746Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Updated Title\",\n    \"content\": \"Updated content of the post.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/api/v1/posts/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": "{{url}}/api/v1/posts/1"
+			},
+			"response": [
+				{
+					"name": "Delete Post",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}/api/v1/posts/1"
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "x-request-id",
+							"value": "4f379cd3-9561-4450-a060-94c5d8e10450"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.162651"
+						},
+						{
+							"key": "server-timing",
+							"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=14.85, instantiation.active_record;dur=15.55, transaction.active_record;dur=67.17, process_action.action_controller;dur=92.60"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

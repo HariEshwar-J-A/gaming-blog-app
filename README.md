@@ -22,6 +22,10 @@ The live app link is [here](https://gaming-blog-app.onrender.com).
 *Email: user1@example.com
 Password: password*
 
+# POSTMAN API REQUESTS
+## Attached with this repository: <strong>Gaming Blog API.postman_collection.json</strong>
+
+
 # APPLICATION FLOW DESCRIPTION
 ## Step 1: User Authentication
 •	Sign Up: As a new user, the first thing I do is sign up for an account using my email and a secure password. The application uses Devise, a Ruby gem, to handle this process, ensuring my information is securely stored.
