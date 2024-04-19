@@ -18,6 +18,9 @@ This is a Gaming Blog App - developed by Harieshwar Jagan Abirami towards Final 
 
 The live app link is [here](https://gaming-blog-app.onrender.com).
 
+# LINK FOR VIDEO EXPLANATION
+[Loom Video](https://www.loom.com/share/58b98151a41e4e7fa8c1126a2c2f9bbe?sid=c060f95e-ceb2-4cf2-9f13-05ed1439ad8e)
+
 # TEST DATA
 *Email: user1@example.com
 Password: password*
